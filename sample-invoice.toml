@@ -1,0 +1,51 @@
+# -----------------------------------------------
+# INVOICE DATA FILE
+# -----------------------------------------------
+# Edit the values in this file to generate a new
+# invoice. Then run the Python script.
+# -----------------------------------------------
+
+# Your details (the person sending the invoice)
+[sender]
+name = "My Full Name"
+
+# The client you are billing
+[client]
+name = "Company, Inc"
+address = """
+1234 Address Boulevard,
+Suite 123,
+City, State 12345, USA
+"""
+
+# Core invoice details
+[invoice]
+number = 10
+# Dates can be written in any format you prefer
+issue_date = "June 27, 2025"
+due_date = "July 1, 2025"
+currency_symbol = "$" # Use "$", "€", "R$", etc.
+
+# A list of services or items.
+# Each item block starts with [[items]].
+[[items]]
+description = "Development services provided for the month of June, 2025"
+quantity = 1
+# Use numbers for quantity and rate, not strings.
+rate = 5000.0
+
+# To add more items, copy the block above. For example:
+# [[items]]
+# description = "Cloud infrastructure setup"
+# quantity = 15 # e.g., hours
+# rate = 100.0 # e.g., hourly rate
+
+# Financial details
+[financials]
+# Tax rate in percent. For 0% tax, use 0.0. For 15% tax, use 15.0.
+tax_rate = 0.0
+
+# Payment instructions that appear at the bottom
+[terms]
+notes = "Transfer value to the account xyz"
+
